@@ -46,11 +46,11 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -126,15 +126,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# STATIC_URL = '/static/'
-# MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'food_app/static')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'food_app/static')
+]
 
 django_heroku.settings(locals())
 
