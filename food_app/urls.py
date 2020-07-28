@@ -20,6 +20,5 @@ from resume.views import rs
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
-    path('food/', include('food.urls')),
     path('res/',rs,name='res'),
 ]
