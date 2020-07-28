@@ -25,8 +25,9 @@ def rs(request):
           'page-size': 'Letter',
           'encoding': 'UTF-8',
                }
-     
-          pdf = pdfkit.from_string(html, False, options)
+          config = pdfkit.configuration(
+              wkhtmltopdf='/usr/local/bin/wkhtmltopdf')
+          pdf = pdfkit.from_string(html, False, options, configuration=config)
           response = HttpResponse(pdf, content_type='application/pdf')
           response['Content-Disposition'] = 'attachment'
           id_map = get_random_string(length=8)
