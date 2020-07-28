@@ -44,6 +44,15 @@ INSTALLED_APPS = [
 
 ]
 
+WKHTMLTOPDF_BINARY = wkhtmltopdf-pack
+
+# Ensure virtualenv path is part of PATH env var
+os.environ['PATH'] += os.pathsep + os.path.dirname(sys.executable)
+WKHTMLTOPDF_CMD = subprocess.Popen(
+    # Note we default to 'wkhtmltopdf' as the binary name
+    ['which', os.environ.get('WKHTMLTOPDF_BINARY', 'wkhtmltopdf')],
+    stdout=subprocess.PIPE).communicate()[0].strip()
+
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
