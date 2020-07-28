@@ -26,7 +26,7 @@ SECRET_KEY = 'e7f)xz=fe#6xm3)l!yh0!n2y!)ebrrtmuk&=x5&2tvt6xt*)hs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://shyamapp.herokuapp.com']
 
 
 # Application definition
